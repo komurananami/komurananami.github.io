@@ -1,15 +1,14 @@
 <template>
   <header id="nav">
-    <div class="nav-container">
+    <div class="nav">
       <div class="nav-left">
-        <div>nanami</div>
-        <!-- <a href="https://fontmeme.com/ja/font-signature/"
+        <a href="https://fontmeme.com/ja/font-signature/"
           ><img
             class="nav-left-img"
             src="https://fontmeme.com/permalink/210330/86265904da868351312d6fcc83be3480.png"
             alt="font-signature"
             border="0"
-        /></a> -->
+        /></a>
       </div>
       <div class="nav-right">
         <router-link to="/" class="nav-right-item">Home</router-link>
@@ -41,7 +40,7 @@
     color: #2c3e50;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #e5e5e5;
     }
   }
 }
@@ -55,7 +54,13 @@ header {
   left: 0px;
 }
 
-.nav-container {
+.container {
+  position: relative;
+  overflow: hidden;
+  padding: 80px;
+}
+
+.nav {
   padding: 0 80px;
   height: 100%;
   z-index: 9;
@@ -64,9 +69,14 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
 
-.nav-right-item {
-  margin-left: 20px;
+  &-left-img {
+    width: 60px;
+  }
+  &-right {
+    &-item {
+      margin-left: 20px;
+    }
+  }
 }
 </style>
