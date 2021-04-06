@@ -15,6 +15,35 @@
       </div>
       <div id="topAnimation" ref="topAnimation" class="animation-top"></div>
     </div>
+
+    <div class="skills-heading">skills</div>
+    <div class="skills-container">
+      <div class="skills">
+        <div class="skills-box">
+          <img alt="i1" src="../assets/svg/I1.svg" />
+          <h2>Engineer</h2>
+          <div>HTML5</div>
+          <div>CSS3</div>
+          <div>JavaScript</div>
+          <div>Vue.js</div>
+          <div>React</div>
+        </div>
+        <div class="skills-box">
+          <img alt="i1" src="../assets/svg/I1.svg" />
+          <h2>Design</h2>
+          <div>AdobeXD</div>
+          <div>Photoshop</div>
+          <div>Illustrator</div>
+        </div>
+        <div class="skills-box">
+          <img alt="i1" src="../assets/svg/I1.svg" />
+          <h2>Architect</h2>
+          <div>ArchiCAD</div>
+          <div>Twinmotion</div>
+          <div>Rhinoceros</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -75,6 +104,16 @@ export default defineComponent({
   }
 }
 
+.animation {
+  &-top {
+    position: absolute;
+    right: 10vw;
+    width: 600px;
+    z-index: 5;
+    top: 100px;
+  }
+}
+
 .home {
   padding: 0 40px;
 
@@ -84,13 +123,29 @@ export default defineComponent({
   }
 }
 
-.animation {
-  &-top {
-    position: absolute;
-    right: 10vw;
-    width: 600px;
-    z-index: 5;
-    top: 100px;
+.skills {
+  display: flex;
+  justify-content: space-between;
+
+  &-container {
+    width: 850px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+
+  &-heading {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  &-box {
+    padding: 20px;
+    box-shadow: 1px 1px 3px rgba(70, 62, 62, 0.15);
+  }
+
+  &-box img {
+    width: 200px;
   }
 }
 </style>
