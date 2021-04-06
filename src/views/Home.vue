@@ -83,4 +83,14 @@ export default defineComponent({
     font-size: 20px;
   }
 }
+
+.animation {
+  &-top {
+    position: absolute;
+    right: 10vw;
+    width: 600px;
+    z-index: 5;
+    top: 100px;
+  }
+}
 </style>
