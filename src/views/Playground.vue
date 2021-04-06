@@ -1,6 +1,18 @@
 <template>
   <div class="container">
-    <h1>This is a playground page</h1>
-    <h1>coming soon...</h1>
+    <Dayjs />
+  </div>
+  <div class="container">
+    <Btn msg="I'm component" />
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import Dayjs from "../components/atoms/Dayjs.vue";
+import Btn from "../components/atoms/Btn.vue";
+
+export default defineComponent({
+  components: { Dayjs, Btn },
+});
+</script>
