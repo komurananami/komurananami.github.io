@@ -3,12 +3,15 @@
     <button
       class="btn"
       :style="{ 'background-color': backColor, color: textColor }"
-      @click="showPwd = true"
+      @click="clickHandler"
     >
       {{ msg }}
     </button>
+
     <div v-if="hello" class="hello">
-      <div v-if="showPwd">I'm clicked</div>
+      <transition name="fade">
+        <div v-if="showPwd">I'm clicked</div>
+      </transition>
     </div>
   </div>
 </template>
@@ -36,8 +39,16 @@ export default defineComponent({
     const state = reactive({
       showPwd: false,
     });
+
+    const clickHandler = () => {
+      state.showPwd = true;
+      setTimeout(() => {
+        state.showPwd = false;
+      }, 2500);
+    };
     return {
       ...toRefs(state),
+      clickHandler,
     };
   },
 });
@@ -57,5 +68,20 @@ export default defineComponent({
 .hello {
   padding-left: 40px;
   padding-top: 10px;
+  font-weight: bold;
+}
+
+.fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateX(-20px);
+  opacity: 0;
 }
 </style>
