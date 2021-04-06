@@ -3,7 +3,7 @@
     <Dayjs />
   </div>
   <div class="container">
-    <Btn msg="I'm component" />
+    <Btn msg="I'm component" hello />
   </div>
 </template>
 

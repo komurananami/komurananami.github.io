@@ -6,6 +6,7 @@
     >
       {{ msg }}
     </button>
+    <div v-if="hello">hello world</div>
   </div>
 </template>
 
@@ -25,6 +26,7 @@ export default defineComponent({
       type: String,
       default: "#ffffff",
     },
+    hello: Boolean,
   },
 });
 </script>
@@ -32,7 +34,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .btn {
   border-radius: 20px;
-  /* height: 30px; */
   font-weight: bold;
   font-size: 15px;
   cursor: pointer;
