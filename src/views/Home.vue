@@ -44,6 +44,18 @@
         </div>
       </div>
     </div>
+
+    <div class="works-container">
+      <div class="works-heading">works</div>
+      <div style="display: flex">
+        <div class="works-img" id="lottie" ref="lottie"></div>
+        <div class="works">
+          <div>coming soon...</div>
+          <div>coming soon...</div>
+          <div>coming soon...</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -146,6 +158,39 @@ export default defineComponent({
 
   &-box img {
     width: 200px;
+  }
+}
+
+.works {
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+
+  div {
+    background: #fe697d;
+    height: 150px;
+    width: 160px;
+    margin: 0 20px;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+    box-shadow: 3px 5px 5px rgba(70, 62, 62, 0.15);
+  }
+
+  &-container {
+    padding: 0 80px;
+    margin: 0 auto;
+  }
+
+  &-heading {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  &-img {
+    width: 40vw;
   }
 }
 </style>
