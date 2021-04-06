@@ -14,7 +14,6 @@
         <Btn msg="go to PLAYGROUND" @click="clickHandler"></Btn>
       </div>
       <div id="topAnimation" ref="topAnimation" class="animation-top"></div>
-      <!-- <img alt="shape-green" src="../assets/blob.svg" class="shape-green-top" /> -->
     </div>
   </div>
 </template>
@@ -24,8 +23,8 @@ import { defineComponent } from "vue";
 import lottie from "lottie-web";
 import { useRouter } from "vue-router";
 import Btn from "@/components/atoms/Btn.vue";
-// import A1 from "@/assets/Animation/F1/A1.json";
-// import A2 from "@/assets/Animation/F2/A2.json";
+import A1 from "@/assets/Animation/F1/A1.json";
+import A2 from "@/assets/Animation/F2/A2.json";
 
 export default defineComponent({
   components: { Btn },
@@ -36,14 +35,14 @@ export default defineComponent({
       renderer: "svg",
       loop: true,
       autoplay: true,
-      // animationData: A1,
+      animationData: A1,
     });
     lottie.loadAnimation({
       container: this.$refs.topAnimation as Element,
       renderer: "svg",
       loop: true,
       autoplay: true,
-      // animationData: A2,
+      animationData: A2,
     });
   },
   setup() {
