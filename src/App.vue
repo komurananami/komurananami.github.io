@@ -24,6 +24,11 @@
   <router-view />
 </template>
 
+<script>
+document.body.style.margin = "0";
+console.log(document.body);
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
