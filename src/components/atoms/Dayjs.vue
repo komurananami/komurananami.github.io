@@ -1,10 +1,10 @@
 <template>
-  <p>Today's date : {{ today }}</p>
-  <p>Current Time : {{ time }}</p>
+  <p>Today's date : {{ state.today }}</p>
+  <p>Current Time : {{ state.time }}</p>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, reactive } from "vue";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 
@@ -13,11 +13,21 @@ dayjs.extend(localizedFormat);
 export default defineComponent({
   setup() {
     const now = dayjs();
-    console.log("now", now.format("LL"));
-    const today = now.format("LL");
-    const time = now.format("LT");
+    const state = reactive({
+      today: now.format("LL"),
+      time: now.format("LTS"),
+    });
 
-    return { today, time };
+    const interval = setInterval(() => {
+      const now = dayjs();
+      const today = now.format("LL");
+      const time = now.format("LTS");
+
+      state.today = today;
+      state.time = time;
+    }, 1000);
+
+    return { state, interval };
   },
 });
 </script>
