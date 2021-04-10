@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-    <img alt="shape-top" src="../assets/blob.svg" class="shape-top" />
     <img alt="shape-green" src="../assets/blob.svg" class="shape-bottom" />
+    <img alt="shape-top" src="../assets/blob.svg" class="shape-top" />
+
     <div class="home">
       <div class="home-message">
         <h1>Nanami Komura's <br />Portfolio</h1>
@@ -16,8 +17,8 @@
       <div id="topAnimation" ref="topAnimation" class="animation-top"></div>
     </div>
 
-    <div class="skills-heading">skills</div>
     <div class="skills-container">
+      <div class="skills-heading">skills</div>
       <div class="skills">
         <div class="skills-box">
           <img alt="i1" src="../assets/svg/I1.svg" />
@@ -47,7 +48,7 @@
 
     <div class="works-container">
       <div class="works-heading">works</div>
-      <div style="display: flex">
+      <div class="works-section">
         <div class="works-img" id="lottie" ref="lottie"></div>
         <div class="works">
           <div>coming soon...</div>
@@ -103,8 +104,16 @@ export default defineComponent({
   &-top {
     position: absolute;
     z-index: -1;
-    top: -1150px;
-    right: -2000px;
+    top: -950px;
+    right: -1800px;
+    width: 3000px;
+    @media screen and (max-width: 1200px) {
+      right: -2100px;
+    }
+    @media screen and (max-width: 768px) {
+      top: -650px;
+      right: -1500;
+    }
   }
 
   &-bottom {
@@ -113,74 +122,141 @@ export default defineComponent({
     top: 1400px;
     right: -200px;
     width: 2600px;
+    @media screen and (max-width: 768px) {
+      top: 2600px;
+      right: -600px;
+    }
   }
 }
 
 .animation {
   &-top {
-    position: absolute;
-    right: 10vw;
-    width: 600px;
+    width: 700px;
     z-index: 5;
-    top: 100px;
+    @media screen and (max-width: 1200px) {
+      width: 500px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 300px;
+      margin: 0 auto;
+      padding-left: 160px;
+    }
   }
 }
 
 .home {
-  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 
   &-message {
-    padding: 170px 0;
+    padding: 170px 0px 170px 100px;
     font-size: 20px;
+
+    @media screen and (max-width: 1200px) {
+      padding: 170px 30px 170px 50px;
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 768px) {
+      margin: 0 auto;
+      padding: 170px 50px 0 50px;
+    }
   }
 }
 
 .skills {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 
   &-container {
-    width: 850px;
-    margin: 0 auto;
     margin-bottom: 100px;
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &-heading {
     font-size: 30px;
     text-align: center;
-    padding-bottom: 60px;
+    padding: 60px 0;
   }
 
   &-box {
-    padding: 20px;
+    padding: 30px;
+    margin: 30px;
     box-shadow: 1px 1px 3px rgba(70, 62, 62, 0.15);
+    @media screen and (max-width: 1200px) {
+      padding: 20px;
+      margin: 20px;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 60px;
+      margin: 20px auto;
+    }
   }
 
   &-box img {
     width: 200px;
+    @media screen and (max-width: 1200px) {
+      width: 20vw;
+    }
+    @media screen and (max-width: 768px) {
+      width: 200px;
+    }
   }
 }
 
 .works {
-  width: 60vw;
   display: flex;
-  justify-content: space-between;
-  padding: 0 50px;
+  margin: 0 auto;
+  @media screen and (max-width: 1200px) {
+    margin: 0;
+    justify-content: center;
+  }
+  @media screen and (max-width: 768px) {
+    width: 450px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
 
   div {
     background: #fe697d;
     height: 150px;
     width: 160px;
-    margin: 0 20px;
+    margin: 30px;
     color: white;
     text-align: center;
     line-height: 150px;
     box-shadow: 3px 5px 5px rgba(70, 62, 62, 0.15);
+    @media screen and (max-width: 1200px) {
+      margin: 20px;
+    }
+    @media screen and (max-width: 768px) {
+      margin: 10px;
+      height: 200px;
+      width: 200px;
+    }
   }
 
   &-container {
-    padding: 0 80px;
     margin: 0 auto;
+    width: 1170px;
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &-heading {
@@ -189,8 +265,24 @@ export default defineComponent({
     padding-bottom: 60px;
   }
 
+  &-section {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+      flex-direction: column-reverse;
+    }
+  }
+
   &-img {
-    width: 40vw;
+    width: 400px;
+    @media screen and (max-width: 1200px) {
+      width: 400px;
+      margin-left: 80px;
+    }
+    @media screen and (max-width: 768px) {
+    }
   }
 }
 </style>
