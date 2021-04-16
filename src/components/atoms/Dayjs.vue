@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from "vue";
+import { defineComponent, onUnmounted, reactive } from "vue";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 
@@ -25,7 +25,12 @@ export default defineComponent({
 
       state.today = today;
       state.time = time;
+      console.log(now);
     }, 1000);
+
+    onUnmounted(() => {
+      clearInterval(interval);
+    });
 
     return { state, interval };
   },
